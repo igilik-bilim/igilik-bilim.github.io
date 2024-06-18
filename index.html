@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .quiz-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .question p {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .options input {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #6e8efb;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #a777e3;
+            transform: scale(1.05);
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="quiz-container">
+    <h2>Quiz</h2>
+    <form id="quiz-form"></form>
+    <div id="result"></div>
+</div>
+
+<script>
+    // Quiz data in JSON format
+    const quizData = {
+        "quizQuestions": [
+            {
+                "question": "Мен жұмыс істеймін",
+                "options": [
+                    { "option": "I work", "correct": true },
+                    { "option": "I don’t work", "correct": false },
+                    { "option": "Do I work ?", "correct": false }
+                ]
+            },
+            {
+                "question": "Олар апта сайын бір-бірін көреді",
+                "options": [
+                    { "option": "They see each other every week", "correct": true },
+                    { "option": "They don’t see each other every week", "correct": false },
+                    { "option": "Do they see each other every week ?", "correct": false }
+                ]
+            }
+        ]
+    };
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const quizForm = document.getElementById('quiz-form');
+        quizData.quizQuestions.forEach((quizItem, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+
+            const questionP = document.createElement('p');
+            questionP.textContent = quizItem.question;
+            questionDiv.appendChild(questionP);
+
+            const optionsUl = document.createElement('ul');
+            optionsUl.className = 'options';
+
+            quizItem.options.forEach((option, optIndex) => {
+                const optionLi = document.createElement('li');
+                const optionInput = document.createElement('input');
+                optionInput.type = 'radio';
+                optionInput.name = `question${index + 1}`;
+                optionInput.value = option.correct ? 'correct' : 'incorrect';
+                optionLi.appendChild(optionInput);
+                optionLi.appendChild(document.createTextNode(option.option));
+                optionsUl.appendChild(optionLi);
+            });
+
+            questionDiv.appendChild(optionsUl);
+            quizForm.appendChild(questionDiv);
+        });
+
+        const submitBtn = document.createElement('button');
+        submitBtn.type = 'button';
+        submitBtn.className = 'submit-btn';
+        submitBtn.innerText = 'Submit';
+        submitBtn.onclick = checkAnswers;
+        quizForm.appendChild(submitBtn);
+    });
+
+    function checkAnswers() {
+        const quizForm = document.getElementById('quiz-form');
+        const resultDiv = document.getElementById('result');
+        const formData = new FormData(quizForm);
+        let score = 0;
+        let totalQuestions = quizData.quizQuestions.length;
+
+        document.querySelectorAll('.options li').forEach(li => {
+            li.classList.remove('correct', 'incorrect');
+        });
+
+        for (let entry of formData.entries()) {
+            const [question, value] = entry;
+            const selectedOption = quizForm.querySelector(`input[name="${question}"]:checked`);
+            const parentLi = selectedOption.parentElement;
+
+            if (value === 'correct') {
+                score++;
+                parentLi.classList.add('correct');
+            } else {
+                parentLi.classList.add('incorrect');
+            }
+        }
+
+        resultDiv.innerHTML = `<p>You scored ${score} out of ${totalQuestions}</p>`;
+    }
+</script>
+</body>
+</html>
