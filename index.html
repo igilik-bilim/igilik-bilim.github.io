@@ -273,27 +273,28 @@
                     "question": "Ол демалыс күндері лекция береді ме ?",
                     "type": "MULTIPLE CHOICE",
                     "option_1": "Does he give lectures on weekends ?",
-                    "option_2": "I know",
-                    "option_3": "I know",
-                    "option_4": "I know"
+                    "option_2": "Do you give lectures on weekends ?",
+                    "option_3": "Does she give lectures on weekends ?",
+                    "option_4": "He doesn’t give lectures on weekends"
                 },
                 {
                     "number": 11,
                     "question": "Ол демалыс күндері лекция береді",
+                    "description": "He ____ ____ on weekends",
                     "type": "MULTIPLE CHOICE",
-                    "option_1": "He gives lectures on weekends",
-                    "option_2": "I know",
-                    "option_3": "I know",
-                    "option_4": "I know"
+                    "option_1": "gives lectures",
+                    "option_2": "give lectures",
+                    "option_3": "lectures gives",
+                    "option_4": "know lectures"
                 },
                 {
                     "number": 12,
                     "question": "Ол демалыс күндері лекция бермейді",
                     "type": "MULTIPLE CHOICE",
                     "option_1": "He doesn’t give lectures on weekends",
-                    "option_2": "I know",
-                    "option_3": "I know",
-                    "option_4": "I know"
+                    "option_2": "He don’t give lectures on weekends",
+                    "option_3": "He gives lectures on weekends",
+                    "option_4": "Does she give lectures on weekends ?"
                 },
                 {
                     "number": 13,
@@ -579,7 +580,7 @@
                         const textInput = questionDiv.querySelector(`input[name="question${index + 1}"]`);
                         if (textInput) {
                             answered = true;
-                            isCorrect = textInput.value.trim().toLowerCase() === quizItem[`option_1`].toLowerCase();
+                            isCorrect = compareTexts(textInput.value, quizItem[`option_1`]);
                         }
                     }
 
@@ -611,6 +612,17 @@
                 resultDiv.innerHTML = '';
                 quizForm.classList.remove("all-answered");
                 loadQuiz();
+            }
+
+            function normalizeText(text) {
+                text = text.toLowerCase();
+                // Remove spaces and symbols using a regex
+                text = text.replace(/[\W_]/g, '');
+                return text;
+            }
+
+            function compareTexts(text1, text2) {
+                return normalizeText(text1) === normalizeText(text2);
             }
 
             restartBtn.addEventListener('click', restartQuiz);
