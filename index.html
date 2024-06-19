@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,8 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #6e8efb, #a777e3);
             margin: 0;
-            padding: 20px; /* Added padding to body for better spacing */
+            padding: 20px;
+            /* Added padding to body for better spacing */
         }
 
         .quiz-container {
@@ -19,7 +21,8 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             width: 100%;
-            margin: 0 auto; /* Center the quiz container */
+            margin: 0 auto;
+            /* Center the quiz container */
         }
 
         h2 {
@@ -33,6 +36,8 @@
             margin-bottom: 20px;
             border-bottom: 1px solid #ccc;
             padding-bottom: 20px;
+            padding-left: 5px;
+            padding-right: 5px;
         }
 
         .question p {
@@ -93,16 +98,19 @@
 
         #result {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 24px;
             text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .all-answered .correct {
-            border: 1px solid green;
+            border: 2px solid green;
+            border-radius: 5px;
         }
 
         .all-answered .incorrect {
-            border: 1px solid red;
+            border: 2px solid red;
+            border-radius: 5px;
         }
 
         #restart-btn {
@@ -125,6 +133,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="quiz-container">
         <h2>Quiz</h2>
@@ -134,7 +143,7 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const quizForm = document.getElementById('quiz-form');
             const resultDiv = document.getElementById('result');
             const restartBtn = document.getElementById('restart-btn');
@@ -273,6 +282,186 @@
                     "option_2": "I know",
                     "option_3": "I know",
                     "option_4": "I know"
+                },
+                {
+                    "number": 16,
+                    "question": "Алмат күніге таңертең газет оқиды",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Almat reads the newspaper every morning",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 17,
+                    "question": "Алмат күніге таңертең газет оқымайды.",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Almat doesn't read the newspaper every morning.",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 18,
+                    "question": "Алмат күніге таңертең газет оқиды ма?",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Does Almat read the newspaper every morning?",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 19,
+                    "question": "Әсем ащы тағамды ұнатпайды",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Asem doesn't like spicy food.",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 20,
+                    "question": "Әсем ащы тағамды ұнатады",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Asem likes spicy food",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 21,
+                    "question": "Әсем ащы тағамды ұнатады ма?",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Does Asem like spicy food",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 22,
+                    "question": "Олар дүкенді жексенбі күдері ашпайды.",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "They don't open the shop on Sundays.",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 23,
+                    "question": "Олар дүкенді жексенбі күдері ашады ма ?",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Do they open the shop on Sundays.",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 24,
+                    "question": "Олар дүкенді дүйсенбі күндері ашады.",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "They open the shop on Monday",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 25,
+                    "question": "Олар дүкенді кешкі сағат 6-да жабады.",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "They close the shop at 6 pm. - Олар дүкенді кешкі сағат",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 26,
+                    "question": "Олар дүкенді кешкі сағат 6-да жабады ма ?",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Do they close the shop at 6 pm? - Олар дүкенді кешкі сағат",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 27,
+                    "question": "Олар дүкенді кешкі сағат 6-да жаппайды.",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "They don’t close the shop at 6 pm. - Олар дүкенді кешкі сағат",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 28,
+                    "question": "Ол жұмысты таңғы 9-да бастайды.",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "He starts his work at 9 am. - Ол жұмысты таңғы",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 29,
+                    "question": "Ол жұмысты таңғы 9-да бастайды ма?",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Does he start his work at 9 am. - Ол жұмысты таңғы",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 30,
+                    "question": "Ол жұмысын таңғы 9-да бастамайды.",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "He doesn’t start his work at 9 am. - Ол жұмысын таңғы",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 31,
+                    "question": "Мен үй тапсырмасын кешкі асқа дейін бітіремін",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "I finish my homework before dinner",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 32,
+                    "question": "Мен үй тапсырмасын кешкі асқа дейін бітірмеймін",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "I don’t finish my homework before dinner",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 33,
+                    "question": "Мен білемін",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "I know",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 34,
+                    "question": "Мен білмеймін",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "I don’t know",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 35,
+                    "question": "Сен білесің бе ?",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Do you know ?",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
                 }
             ];
 
@@ -394,7 +583,7 @@
                     resultDiv.textContent = 'Барлық сұрақтарға жауап беріңіз.';
                 } else {
                     quizForm.classList.add("all-answered");
-                    resultDiv.textContent = `Your score is ${score} out of ${quizData.length}`;
+                    resultDiv.textContent = `Сіздің үпайыңыз ${score}/${quizData.length}`;
                 }
 
             }
@@ -411,4 +600,5 @@
         });
     </script>
 </body>
+
 </html>
