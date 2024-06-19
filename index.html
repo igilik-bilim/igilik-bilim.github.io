@@ -10,7 +10,7 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #6e8efb, #a777e3);
             margin: 0;
-            padding: 20px;
+            padding: 20px 0px;
             /* Added padding to body for better spacing */
         }
 
@@ -130,6 +130,42 @@
 
         #restart-btn:hover {
             background-color: #555;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 600px) {
+            .quiz-container {
+                padding: 10px;
+                max-width: 100%;
+            }
+
+            .options li {
+                font-size: 14px;
+            }
+
+            .submit-btn,
+            #restart-btn {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            #result {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h2 {
+                font-size: 20px;
+            }
+
+            .question p {
+                font-size: 16px;
+            }
+
+            .options li {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -580,7 +616,7 @@
                 });
 
                 if (!allAnswered) {
-                    resultDiv.textContent = 'Барлық сұрақтарға жауап беріңіз.';
+                    resultDiv.textContent = 'Барлық сұрақтарға жауап беріңіз!';
                 } else {
                     quizForm.classList.add("all-answered");
                     resultDiv.textContent = `Сіздің үпайыңыз ${score}/${quizData.length}`;
