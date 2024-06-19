@@ -8,169 +8,407 @@
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #6e8efb, #a777e3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 20px; /* Added padding to body for better spacing */
         }
+
         .quiz-container {
             background-color: #fff;
-            padding: 40px;
+            padding: 20px;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             width: 100%;
+            margin: 0 auto; /* Center the quiz container */
         }
+
         h2 {
             color: #333;
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 28px;
+            margin-bottom: 20px;
+            font-size: 24px;
         }
+
         .question {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
         }
+
         .question p {
-            font-size: 20px;
-            margin-bottom: 15px;
+            font-size: 18px;
+            margin-bottom: 10px;
             color: #555;
         }
+
+        .description {
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #777;
+        }
+
         .options {
             list-style-type: none;
             padding: 0;
         }
+
         .options li {
             margin-bottom: 10px;
-            font-size: 18px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
         }
+
         .options input {
             margin-right: 10px;
             transform: scale(1.2);
             cursor: pointer;
         }
+
+        .options input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
         .submit-btn {
             display: block;
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             background-color: #6e8efb;
             color: white;
             border: none;
-            border-radius: 50px;
-            font-size: 18px;
+            border-radius: 5px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         .submit-btn:hover {
             background-color: #a777e3;
-            transform: scale(1.05);
         }
+
         #result {
             margin-top: 20px;
-            font-size: 20px;
+            font-size: 18px;
             text-align: center;
         }
-        .correct {
-            color: green;
+
+        .all-answered .correct {
+            border: 1px solid green;
         }
-        .incorrect {
-            color: red;
+
+        .all-answered .incorrect {
+            border: 1px solid red;
+        }
+
+        #restart-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #restart-btn:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
-<div class="quiz-container">
-    <h2>Quiz</h2>
-    <form id="quiz-form"></form>
-    <div id="result"></div>
-</div>
+    <div class="quiz-container">
+        <h2>Quiz</h2>
+        <form id="quiz-form"></form>
+        <div id="result"></div>
+        <button id="restart-btn">Restart Quiz</button>
+    </div>
 
-<script>
-    // Quiz data in JSON format
-    const quizData = {
-        "quizQuestions": [
-            {
-                "question": "Мен жұмыс істеймін",
-                "options": [
-                    { "option": "I work", "correct": true },
-                    { "option": "I don’t work", "correct": false },
-                    { "option": "Do I work ?", "correct": false }
-                ]
-            },
-            {
-                "question": "Олар апта сайын бір-бірін көреді",
-                "options": [
-                    { "option": "They see each other every week", "correct": true },
-                    { "option": "They don’t see each other every week", "correct": false },
-                    { "option": "Do they see each other every week ?", "correct": false }
-                ]
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const quizForm = document.getElementById('quiz-form');
+            const resultDiv = document.getElementById('result');
+            const restartBtn = document.getElementById('restart-btn');
+
+            let quizData = [
+                {
+                    "number": 1,
+                    "question": "Ол(ер) французша сөйлейді",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "He speaks French",
+                    "option_2": "He speak French",
+                    "option_3": "She speaks French",
+                    "option_4": "Does he speak French ?"
+                },
+                {
+                    "number": 2,
+                    "question": "Ол(ер) французша сөйлей ме ?",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Does he speak French ?",
+                    "option_2": "He speaks French",
+                    "option_3": "Does he speaks French ?",
+                    "option_4": "He doesn't speak French"
+                },
+                {
+                    "number": 3,
+                    "question": "Ол(ер) французша сөйлемейді",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "He doesn't speak French",
+                    "option_2": "He speaks French",
+                    "option_3": "She doesn't speak French",
+                    "option_4": "Does he speak French ?"
+                },
+                {
+                    "number": 4,
+                    "question": "Біз жиі саяхаттаймыз",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "We often travel",
+                    "option_2": "Do you travel often ?",
+                    "option_3": "They often travel",
+                    "option_4": "She often travels"
+                },
+                {
+                    "number": 5,
+                    "question": "Сен жиі саяхат жасайсың ба ?",
+                    "description": "Do you travel ____ ?",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "often",
+                    "option_2": "always",
+                    "option_3": "usually",
+                    "option_4": "never"
+                },
+                {
+                    "number": 6,
+                    "question": "Олар жиі саяхат жасамайды",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "They don’t travel often",
+                    "option_2": "They often travel",
+                    "option_3": "We often travel",
+                    "option_4": "They doesn't travel often"
+                },
+                {
+                    "number": 7,
+                    "question": "Айша әрқашан жауап береді",
+                    "description": "Aisha always ____",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "answers",
+                    "option_2": "speaks",
+                    "option_3": "answer",
+                    "option_4": "speak"
+                },
+                {
+                    "number": 8,
+                    "question": "Айша әрқашан жауап береді ме ?",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Does Aisha always answer ?",
+                    "option_2": "Does Aisha always answers ?",
+                    "option_3": "Does she always answer ?",
+                    "option_4": "Aisha doesn't always answer"
+                },
+                {
+                    "number": 9,
+                    "question": "Айша әрқашан жауап бермейді",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Aisha doesn't always answer",
+                    "option_2": "Aisha don't always answers",
+                    "option_3": "She doesn't always answer",
+                    "option_4": "Aisha always answers"
+                },
+                {
+                    "number": 10,
+                    "question": "Ол демалыс күндері лекция береді ме ?",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Does he give lectures on weekends?",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 11,
+                    "question": "Ол демалыс күндері лекция береді.",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "He gives lectures on weekends.",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 12,
+                    "question": "Ол демалыс күндері лекция бермейді.",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "He doesn’t give lectures on weekends.",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 13,
+                    "question": "Олар әдетте ерте ұйқтайды.",
+                    "type": "TEXT",
+                    "option_1": "They usually sleep early"
+                },
+                {
+                    "number": 14,
+                    "question": "Олар әдетте ерте ұйқтамайды.",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "They usually don't sleep early",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                },
+                {
+                    "number": 15,
+                    "question": "Олар әдетте ерте ұйқтайды ма ?",
+                    "type": "MULTIPLE CHOICE",
+                    "option_1": "Do they usually sleep early ?",
+                    "option_2": "I know",
+                    "option_3": "I know",
+                    "option_4": "I know"
+                }
+            ];
+
+            function shuffleOptions(options) {
+                for (let i = options.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [options[i], options[j]] = [options[j], options[i]];
+                }
+                return options;
             }
-        ]
-    };
 
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const quizForm = document.getElementById('quiz-form');
-        quizData.quizQuestions.forEach((quizItem, index) => {
-            const questionDiv = document.createElement('div');
-            questionDiv.className = 'question';
+            function loadQuiz() {
+                quizForm.innerHTML = '';
+                resultDiv.innerHTML = '';
 
-            const questionP = document.createElement('p');
-            questionP.textContent = quizItem.question;
-            questionDiv.appendChild(questionP);
+                quizData = quizData.sort(() => Math.random() - 0.5).slice(0, 10);
 
-            const optionsUl = document.createElement('ul');
-            optionsUl.className = 'options';
+                quizData.forEach((quizItem, index) => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'question';
 
-            quizItem.options.forEach((option, optIndex) => {
-                const optionLi = document.createElement('li');
-                const optionInput = document.createElement('input');
-                optionInput.type = 'radio';
-                optionInput.name = `question${index + 1}`;
-                optionInput.value = option.correct ? 'correct' : 'incorrect';
-                optionLi.appendChild(optionInput);
-                optionLi.appendChild(document.createTextNode(option.option));
-                optionsUl.appendChild(optionLi);
-            });
+                    const questionP = document.createElement('p');
+                    questionP.textContent = `${index + 1}. ${quizItem.question}`;
+                    questionDiv.appendChild(questionP);
 
-            questionDiv.appendChild(optionsUl);
-            quizForm.appendChild(questionDiv);
-        });
+                    if (quizItem.description) {
+                        const descriptionP = document.createElement('p');
+                        descriptionP.textContent = quizItem.description;
+                        descriptionP.className = 'description';
+                        questionDiv.appendChild(descriptionP);
+                    }
 
-        const submitBtn = document.createElement('button');
-        submitBtn.type = 'button';
-        submitBtn.className = 'submit-btn';
-        submitBtn.innerText = 'Submit';
-        submitBtn.onclick = checkAnswers;
-        quizForm.appendChild(submitBtn);
-    });
+                    if (quizItem.type === 'MULTIPLE CHOICE') {
+                        const optionsUl = document.createElement('ul');
+                        optionsUl.className = 'options';
 
-    function checkAnswers() {
-        const quizForm = document.getElementById('quiz-form');
-        const resultDiv = document.getElementById('result');
-        const formData = new FormData(quizForm);
-        let score = 0;
-        let totalQuestions = quizData.quizQuestions.length;
+                        const options = [];
+                        for (let i = 1; i <= 4; i++) {
+                            if (quizItem[`option_${i}`]) {
+                                options.push({
+                                    text: quizItem[`option_${i}`],
+                                    correct: i === 1
+                                });
+                            }
+                        }
+                        shuffleOptions(options);
 
-        document.querySelectorAll('.options li').forEach(li => {
-            li.classList.remove('correct', 'incorrect');
-        });
+                        options.forEach((option, optionIndex) => {
+                            const optionLi = document.createElement('li');
+                            const optionInput = document.createElement('input');
+                            optionInput.type = 'radio';
+                            optionInput.name = `question${index + 1}`;
+                            optionInput.value = option.text;
+                            optionLi.appendChild(optionInput);
+                            optionLi.appendChild(document.createTextNode(option.text));
+                            optionsUl.appendChild(optionLi);
+                        });
 
-        for (let entry of formData.entries()) {
-            const [question, value] = entry;
-            const selectedOption = quizForm.querySelector(`input[name="${question}"]:checked`);
-            const parentLi = selectedOption.parentElement;
+                        questionDiv.appendChild(optionsUl);
+                    } else if (quizItem.type === 'TEXT') {
+                        const textInput = document.createElement('input');
+                        textInput.type = 'text';
+                        textInput.name = `question${index + 1}`;
+                        textInput.placeholder = 'Enter your answer';
+                        questionDiv.appendChild(textInput);
+                    }
 
-            if (value === 'correct') {
-                score++;
-                parentLi.classList.add('correct');
-            } else {
-                parentLi.classList.add('incorrect');
+                    quizForm.appendChild(questionDiv);
+                });
+
+                const submitBtn = document.createElement('button');
+                submitBtn.type = 'button';
+                submitBtn.className = 'submit-btn';
+                submitBtn.textContent = 'Submit';
+                submitBtn.addEventListener('click', showResults);
+
+                quizForm.appendChild(submitBtn);
             }
-        }
 
-        resultDiv.innerHTML = `<p>You scored ${score} out of ${totalQuestions}</p>`;
-    }
-</script>
+            function showResults() {
+                let score = 0;
+                let allAnswered = true; // Flag to track if all questions are answered
+
+                quizData.forEach((quizItem, index) => {
+                    const questionDiv = quizForm.children[index];
+                    let isCorrect = false;
+                    let answered = false; // Flag to track if the question is answered
+
+                    if (quizItem.type === 'MULTIPLE CHOICE') {
+                        const selectedOption = questionDiv.querySelector(`input[name="question${index + 1}"]:checked`);
+                        if (selectedOption) {
+                            answered = true;
+                            isCorrect = selectedOption.value === quizItem[`option_1`];
+                        }
+                    } else if (quizItem.type === 'TEXT') {
+                        const textInput = questionDiv.querySelector(`input[name="question${index + 1}"]`);
+                        if (textInput) {
+                            answered = true;
+                            isCorrect = textInput.value.trim().toLowerCase() === quizItem[`option_1`].toLowerCase();
+                        }
+                    }
+
+                    if (answered) {
+                        if (isCorrect) {
+                            score++;
+                            questionDiv.classList.add('correct');
+                            questionDiv.classList.remove('incorrect');
+                        } else {
+                            questionDiv.classList.add('incorrect');
+                            questionDiv.classList.remove('correct');
+                        }
+                    } else {
+                        allAnswered = false;
+                        questionDiv.classList.add('incorrect');
+                    }
+                });
+
+                if (!allAnswered) {
+                    resultDiv.textContent = 'Барлық сұрақтарға жауап беріңіз.';
+                } else {
+                    quizForm.classList.add("all-answered");
+                    resultDiv.textContent = `Your score is ${score} out of ${quizData.length}`;
+                }
+
+            }
+
+            function restartQuiz() {
+                resultDiv.innerHTML = '';
+                quizForm.classList.remove("all-answered");
+                loadQuiz();
+            }
+
+            restartBtn.addEventListener('click', restartQuiz);
+
+            loadQuiz();
+        });
+    </script>
 </body>
 </html>
