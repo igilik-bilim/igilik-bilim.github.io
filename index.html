@@ -132,6 +132,13 @@
             background-color: #555;
         }
 
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
         /* Media Queries for responsiveness */
         @media (max-width: 600px) {
             .quiz-container {
@@ -545,7 +552,7 @@
                         const textInput = document.createElement('input');
                         textInput.type = 'text';
                         textInput.name = `question${index + 1}`;
-                        textInput.placeholder = 'Enter your answer';
+                        textInput.placeholder = 'Жауапты енгізіңіз';
                         questionDiv.appendChild(textInput);
                     }
 
