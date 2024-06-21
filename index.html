@@ -191,7 +191,7 @@
             const resultDiv = document.getElementById('result');
             const restartBtn = document.getElementById('restart-btn');
 
-            let quizData = [
+            let quizDB = [
                 {
                     "number": 1,
                     "question": "Ол(ер) французша сөйлейді",
@@ -492,6 +492,8 @@
                 }
             ];
 
+            let quizData = [];
+
             function shuffleOptions(options) {
                 for (let i = options.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
@@ -504,7 +506,7 @@
                 quizForm.innerHTML = '';
                 resultDiv.innerHTML = '';
 
-                quizData = quizData.sort(() => Math.random() - 0.5).slice(0, 5);
+                quizData = quizDB.sort(() => Math.random() - 0.5).slice(0, 5);
 
                 quizData.forEach((quizItem, index) => {
                     const questionDiv = document.createElement('div');
