@@ -6,7 +6,7 @@ body {
     /* Added padding to body for better spacing */
 }
 
-.quiz-container {
+.container {
     background-color: #fff;
     padding: 20px;
     border-radius: 15px;

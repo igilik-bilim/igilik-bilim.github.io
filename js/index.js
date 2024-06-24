@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const resultDiv = document.getElementById('result');
     const restartBtn = document.getElementById('restart-btn');
 
-    let quizDB = data;
+    const params = new URLSearchParams(window.location.search);
+    const tense = params.get('tense');
+    let quizDB = data[tense];
 
     let quizData = [];
 
