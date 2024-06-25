@@ -131,6 +131,45 @@ input[type=text] {
     box-sizing: border-box;
 }
 
+/* modal */
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease; /* Transition for fade effect */
+  }
+  
+  .modal.show {
+    display: block;
+    opacity: 1; /* Fully visible */
+  }
+  
+  .modal-content {
+    border-radius: 20px;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    transform: translateY(-50px); /* Start position for slide down */
+    transition: transform 0.5s ease; /* Transition for slide down effect */
+  }
+  
+  .modal.show .modal-content {
+    transform: translateY(0); /* End position for slide down */
+  }
+
 /* Media Queries for responsiveness */
 @media (max-width: 600px) {
     .quiz-container {

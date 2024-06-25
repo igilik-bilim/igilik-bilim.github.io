@@ -1,5 +1,31 @@
 
 document.addEventListener('DOMContentLoaded', function () {
+    // modal vars
+    const modal = document.getElementById("modal");
+    const userName = document.getElementById("modal-form-name");
+    const userSurname = document.getElementById("modal-form-surname");
+    const modalSubmitButton = document.getElementById("modal-submit-btn");
+
+    // Show the modal 
+    modal?.classList?.add("show");
+
+    // Close the modal 
+    modalSubmitButton?.addEventListener("click", () => {
+        console.log("User name ",userName.value,)
+        if(userName.value?.length && userSurname.value?.length) {
+            localStorage.setItem("user",JSON.stringify({name: userName.value,surname: userSurname.value}));
+           
+            modal.classList.remove("show");
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 500); 
+        }else{
+            alert("Fill fields")
+        } 
+    });
+
+
+    // start quiz 
     const quizForm = document.getElementById('quiz-form');
     const resultDiv = document.getElementById('result');
     const restartBtn = document.getElementById('restart-btn');
@@ -129,6 +155,29 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             quizForm.classList.add("all-answered");
             resultDiv.textContent = `Сіздің үпайыңыз ${score}/${quizData.length}`;
+
+            // save results in sheet
+           
+            const user = JSON.parse(localStorage.getItem("user"));
+            console.log({
+                id: new Date().getTime().toString(),
+                name: user.name,
+                surname: user.surname,
+                score: `${score}/${quizData.length}`
+        });
+            fetch("https://sheetdb.io/api/v1/dxoui1uk1vetj", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ data :[{
+                    id: new Date().getTime(),
+                    name: user.name,
+                    surname: user.surname,
+                    score: `${score}/${quizData.length}`
+                }]})
+            })
         }
 
     }
