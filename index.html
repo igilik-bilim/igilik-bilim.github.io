@@ -10,15 +10,34 @@
 </head>
 
 <body>
+    <!-- titles -->
     <div class="container">
         <h2>Жаттығу</h2>
         <div>
+            <a class="title-box" href="pages/quiz.html?tense=present">
+                <h2 >Present Simple</h2>
+            </a>
+            <a class="title-box " href="pages/quiz.html?tense=past">
+                <h2>Past Simple</h2>
+            </a>
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+           
+            <h2>Оқушының аты жөні</h2>
+            
             <div>
-                <a href="pages/quiz.html?tense=present">Present Simple</a>
+                <input type="text" placeholder="Аты" id="modal-form-name"/>
             </div>
+
             <div>
-                <a href="pages/quiz.html?tense=past">Past Simple</a>
+                <input type="text" placeholder="Жөні" id="modal-form-surname"/>
             </div>
+            <br/>
+            <button class="submit-btn" id="modal-submit-btn">Жіберу</button>
         </div>
     </div>
 
