@@ -1,6 +1,5 @@
 // const
-const BASE_URL = "https://sheetdb.io/api/v1/dxoui1uk1vetj"
-
+const BASE_URL = "https://sheetdb.io/api/v1/xvti32evlv42c"
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -137,22 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
             resultDiv.textContent = `Сіздің үпайыңыз ${score}/${quizData.length}`;
 
             // save results in sheet
-           
-            const user = JSON.parse(localStorage.getItem("user"));
-            
-            fetch("https://sheetdb.io/api/v1/dxoui1uk1vetj", {
-                method: "POST",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ data :[{
-                    id: new Date().getTime(),
-                    name: user.name,
-                    surname: user.surname,
-                    score: `${score}/${quizData.length}`
-                }]})
-            })
+           requestToSaveResult(`${score}/${quizData.length}`)
         }
 
     }
@@ -182,7 +166,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function requestToSaveResult(score) {
     const user = JSON.parse(localStorage.getItem("user"));
-            
+
+    const url = window.location.href;
+    const urlObj = new URL(url);
+    const searchParams = new URLSearchParams(urlObj.search);
+
+    const title = searchParams.get('tense');
+    showLoading();
     fetch(BASE_URL, {
         method: "POST",
         headers: {
@@ -194,14 +184,17 @@ function requestToSaveResult(score) {
             score,
             name: user.name,
             surname: user.surname,
+            title 
         }]})
     })
+    .catch(() => {})
+    .finally(() => hideLoading())
 }
 
 function showLoading() {
-    document.getElementById('loading').style.display = 'block';
+    document.getElementById('loader-container').style.display = 'flex';
 }
 
 function hideLoading() {
-    document.getElementById('loading').style.display = 'none';
+    document.getElementById('loader-container').style.display = 'none';
 }
