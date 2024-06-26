@@ -1,13 +1,17 @@
 // const
 const BASE_URL = "https://sheetdb.io/api/v1/xvti32evlv42c"
 
+let timerId;
+let time = 0;
 
 document.addEventListener('DOMContentLoaded', function () {
 
     // start quiz 
+    // const timer = document.getElementById("timer");
     const quizForm = document.getElementById('quiz-form');
     const resultDiv = document.getElementById('result');
     const restartBtn = document.getElementById('restart-btn');
+    const finishBtn = document.getElementById("finish-btn");
 
     const params = new URLSearchParams(window.location.search);
     const tense = params.get('tense');
@@ -91,6 +95,9 @@ document.addEventListener('DOMContentLoaded', function () {
         quizForm.appendChild(submitBtn);
     }
 
+    // run timer 
+    startTimer();
+
     function showResults() {
         let score = 0;
         let allAnswered = true; // Flag to track if all questions are answered
@@ -166,12 +173,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function requestToSaveResult(score) {
     const user = JSON.parse(localStorage.getItem("user"));
+    if(!user?.name && !user?.surname) {
+        window.location.href = "/";
+    }
+    console.log(user);
 
     const url = window.location.href;
     const urlObj = new URL(url);
     const searchParams = new URLSearchParams(urlObj.search);
-
     const title = searchParams.get('tense');
+    
     showLoading();
     fetch(BASE_URL, {
         method: "POST",
@@ -184,11 +195,17 @@ function requestToSaveResult(score) {
             score,
             name: user.name,
             surname: user.surname,
-            title 
+            title,
+            time:getFormatedTime()
         }]})
     })
     .catch(() => {})
-    .finally(() => hideLoading())
+    .finally(() => {
+        hideLoading();
+        // startTimer()
+        clearInterval(timerId);
+        startTimer();
+    })
 }
 
 function showLoading() {
@@ -197,4 +214,36 @@ function showLoading() {
 
 function hideLoading() {
     document.getElementById('loader-container').style.display = 'none';
+}
+
+
+// timer
+function displayTime() {
+
+    document.getElementById('timer').textContent = getFormatedTime();
+}
+function startTimer() {
+    clearInterval(timerId);
+    timerId = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    if (time >= 3600) {
+        clearInterval(timer);
+        alert("Time's up!");
+        time= 0
+        return;
+    }
+    time ++;
+    displayTime();
+}
+
+function getFormatedTime() {
+    const minutes = Math.floor((time % 3600) / 60);
+    const seconds = time % 60;
+    return  `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+
+function finishQuiz() {
+    window.location.href = "/"
 }
