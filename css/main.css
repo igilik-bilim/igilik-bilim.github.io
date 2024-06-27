@@ -136,6 +136,16 @@ h2 {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.primary-btn {
+    margin: 10px 0;
+    width: 100%;
+    padding: 12px;
+    color: white;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 5px;
+}
+
 #restart-btn:hover {
     background-color: #555;
 }
