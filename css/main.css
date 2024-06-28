@@ -244,6 +244,9 @@ input[type=text] {
     #result {
         font-size: 20px;
     }
+    .container {
+        max-width: 85%;
+    }
 }
 
 @media (max-width: 400px) {
