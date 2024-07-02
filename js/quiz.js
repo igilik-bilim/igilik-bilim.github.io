@@ -240,9 +240,19 @@ function updateTimer() {
 }
 
 function getFormatedTime() {
+    const date = new Date();
+    
+    const pad = (num) => (num < 10 ? '0' : '') + num;
+
+    const day = pad(date.getDate());
+    const month = pad(date.getMonth() + 1); // Months are zero-based
+    const year = date.getFullYear();
+
     const minutes = Math.floor((time % 3600) / 60);
     const seconds = time % 60;
-    return  `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    // dd.MM.yyyy HH:mm:ss
+
+    return  `${day}.${month}.${year} 00:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
 function finishQuiz() {
