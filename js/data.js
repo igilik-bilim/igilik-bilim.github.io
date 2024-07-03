@@ -1128,7 +1128,7 @@ const data = {
         },
         {
             "number": 6,
-            "question": "Біз нәтижесін жақын арада көреміз",
+            "question": "Біз нәтижесін жақын арада көрмейміз",
             "type": "MULTIPLE CHOICE",
             "option_1": "We won’t see the results soon",
             "option_2": "We don’t see the results soon",
