@@ -1078,5 +1078,137 @@ const data = {
             "type": "TEXT",
             "option_1": "Did you know ?"
         }
+    ],
+    "future": [
+        {
+            "number": 1,
+            "question": "She will live in New York next year",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Ол келесі жылы Нью-Йоркте тұрады",
+            "option_2": "Ол Нью-Йоркте тұрады",
+            "option_3": "Ол келесі жылы Нью-Йоркке барады",
+            "option_4": "Ол келесі жылы Нью-Йоркте тұрмайды"
+        },
+        {
+            "number": 2,
+            "question": "Ол(қыз) келесі жылы Нью-Йоркте тұрмайды",
+            "description": "She _________ in New York next year",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "won't live",
+            "option_2": "live won't",
+            "option_3": "won't go",
+            "option_4": "go won't"
+        },
+        {
+            "number": 3,
+            "question": "Ол(қыз) келесі жылы Нью-Йоркте тұрады ма ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will she live in New York next year?",
+            "option_2": "She will live in New York next year?",
+            "option_3": "Does she live in New York next year?",
+            "option_4": "Will she live in New York next year?"
+        },
+        {
+            "number": 4,
+            "question": "Біз нәтижесін жақын арада көреміз",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "We will see the results soon",
+            "option_2": "We see the results soon",
+            "option_3": "They will see the results soon",
+            "option_4": "We won’t see the results soon"
+        },
+        {
+            "number": 5,
+            "question": "Біз нәтижесін жақын арада көреміз бе ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will we see the results soon ?",
+            "option_2": "Will they see the results soon ?",
+            "option_3": "We will see the results soon ?",
+            "option_4": "Do we see the results soon ?"
+        },
+        {
+            "number": 6,
+            "question": "Біз нәтижесін жақын арада көреміз",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "We won’t see the results soon",
+            "option_2": "We don’t see the results soon",
+            "option_3": "They won’t see the results soon",
+            "option_4": "We didn’t see the results soon"
+        },
+        {
+            "number": 7,
+            "question": "Олар ертең келеді",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "They will come tomorrow",
+            "option_2": "They come tomorrow",
+            "option_3": "We will come tomorrow",
+            "option_4": "They won't come tomorrow"
+        },
+        {
+            "number": 8,
+            "question": "Олар ертең келмейді",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "They won't come tomorrow",
+            "option_2": "They will come tomorrow",
+            "option_3": "We won't come tomorrow",
+            "option_4": "They don't come tomorrow"
+        },
+        {
+            "number": 9,
+            "question": "Олар ертең келеді ме?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will they come tomorrow?",
+            "option_2": "They come tomorrow?",
+            "option_3": "Will we come tomorrow?",
+            "option_4": "Do they come tomorrow?"
+        },
+        {
+            "number": 10,
+            "question": "Біз ертең барамыз",
+            "type": "TEXT",
+            "option_1": "We will go tomorrow"
+        },
+        {
+            "number": 11,
+            "question": "Біз ертең бармаймыз",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "We won't go tomorrow",
+            "option_2": "We will go tomorrow",
+            "option_3": "We don't go tomorrow",
+            "option_4": "They won't go tomorrow"
+        },
+        {
+            "number": 12,
+            "question": "Біз ертең барамыз ба?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will we go tomorrow?",
+            "option_2": "Will they go tomorrow?",
+            "option_3": "Do we go tomorrow?",
+            "option_4": "Did we go tomorrow?"
+        },
+        {
+            "number": 13,
+            "question": "Мен бұл туралы ойланамын",
+            "type": "TEXT",
+            "option_1": "I will think about it"
+        },
+        {
+            "number": 14,
+            "question": "Мен бұл туралы ойланбаймын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I won't think about it",
+            "option_2": "He won't think about it",
+            "option_3": "I don't think about it",
+            "option_4": "I didn't think about it"
+        },
+        {
+            "number": 15,
+            "question": "Мен бұл туралы ойланамын ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will I think about it ?",
+            "option_2": "Will you think about it ?",
+            "option_3": "Do I think about it ?",
+            "option_4": "Did I think about it ?"
+        }
     ]
 };
