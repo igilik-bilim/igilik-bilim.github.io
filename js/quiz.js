@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             quizForm.classList.add("all-answered");
             resultDiv.textContent = `Сіздің үпайыңыз ${score}/${quizData.length}`;
+            this.disabled = true;
 
             // save results in sheet
            requestToSaveResult(`${score}/${quizData.length}`)

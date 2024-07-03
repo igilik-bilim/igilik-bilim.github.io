@@ -121,6 +121,10 @@ h2 {
     border-radius: 5px;
 }
 
+.all-answered .submit-btn {
+    background-color: grey;
+}
+
 #restart-btn {
     display: block;
     width: 100%;
