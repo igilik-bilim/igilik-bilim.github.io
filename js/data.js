@@ -1209,6 +1209,357 @@ const data = {
             "option_2": "Will you think about it ?",
             "option_3": "Do I think about it ?",
             "option_4": "Did I think about it ?"
+        },
+        {
+            "number": 16,
+            "question": "Мен одан ертең сұраймын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I will ask her tomorrow",
+            "option_2": "I won't ask her tomorrow",
+            "option_3": "I ask her tomorrow",
+            "option_4": "We will ask her tomorrow"
+        },
+        {
+            "number": 17,
+            "question": "Мен одан ертең сұрамаймын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I won't ask her tomorrow",
+            "option_2": "I don't ask her tomorrow",
+            "option_3": "I didn't ask her tomorrow",
+            "option_4": "I ask won't her tomorrow"
+        },
+        {
+            "number": 18,
+            "question": "Мен одан ертең сұраймын ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will I ask her tomorrow ?",
+            "option_2": "Do I ask her tomorrow ?",
+            "option_3": "Will You ask her tomorrow ?",
+            "option_4": "I will ask her tomorrow ?"
+        },
+        {
+            "number": 19,
+            "question": "Біз келесі жылы Жапонияға саяхаттаймыз",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "We will travel to Japan next year",
+            "option_2": "We travel to Japan next year",
+            "option_3": "We will travel to Japan next month",
+            "option_4": "They will travel to Japan next year"
+        },
+        {
+            "number": 20,
+            "question": "Біз келесі жылы Жапонияға саяхаттамаймыз",
+            "description": "We ____ ____ to Japan next year",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "won’t travel",
+            "option_2": "don’t travel",
+            "option_3": "didn’t travel",
+            "option_4": " travel won’t"
+        },
+        {
+            "number": 21,
+            "question": "Сен келесі жылы Жапонияға саяхаттайсың ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will you travel to Japan next year ?",
+            "option_2": "Do you travel to Japan next year ?",
+            "option_3": "Did you travel to Japan next year ?",
+            "option_4": "Will you travel to Japan next month ?"
+        },
+        {
+            "number": 22,
+            "question": "Мен сіздің сұрағыңызға ертең жауап беремін",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I will answer your question tomorrow",
+            "option_2": "I will answer your question next year",
+            "option_3": "We will answer your question tomorrow",
+            "option_4": "I answer your question tomorrow"
+        },
+        {
+            "number": 23,
+            "question": "Мен сіздің сұрағыңызға ертең жауап бермеймін",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I won’t answer your question tomorrow",
+            "option_2": "I don’t answer your question tomorrow",
+            "option_3": "I didn’t answer your question tomorrow",
+            "option_4": "We won’t answer your question tomorrow"
+        },
+        {
+            "number": 24,
+            "question": "Сіз менің сұрағыма ертең жауап бересіз бе ?",
+            "description": "Will ____ ____ my question tomorrow ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "you answer",
+            "option_2": "she answer",
+            "option_3": "he answer",
+            "option_4": "you ask"
+        },
+        {
+            "number": 25,
+            "question": "Ол(ер) сізге кітапты келесі аптада береді",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "He will give you the book next week",
+            "option_2": "He will give you the book next month",
+            "option_3": "She will give you the book next week",
+            "option_4": "He gives you the book next week"
+        },
+        {
+            "number": 26,
+            "question": "Ол(ер) сізге кітапты келесі аптада бермейді",
+            "description": "He ____ ____ you the book next week",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "won’t give",
+            "option_2": "don’t give",
+            "option_3": "didn’t give",
+            "option_4": "won’t take"
+        },
+        {
+            "number": 27,
+            "question": "Ол сізге кітапты келесі аптада береді ме ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will he give you the book next week ?",
+            "option_2": "Will she give you the book next week ?",
+            "option_3": "Does he give you the book next week ?",
+            "option_4": "Will he give you the book next year ?"
+        },
+        {
+            "number": 28,
+            "question": "Мен бүгін түнде ерте ұйықтаймын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I will sleep early tonight",
+            "option_2": "I won’t sleep early tonight",
+            "option_3": "He will sleep early tonight",
+            "option_4": "I sleep early tonight"
+        }
+    ],
+    "to_be_present": [
+        {
+            "number": 1,
+            "question": "Мен мұғаліммін",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I am a teacher",
+            "option_2": "I am not a teacher",
+            "option_3": "I am an teacher",
+            "option_4": "He is a teacher"
+        },
+        {
+            "number": 2,
+            "question": "Мен мұғалім емеспін",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I am not a teacher",
+            "option_2": "I am a teacher",
+            "option_3": "I am not a student",
+            "option_4": "He is not a teacher"
+        },
+        {
+            "number": 3,
+            "question": "Мен мұғаліммін бе ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Am I a teacher ?",
+            "option_2": "Do I a teacher ?",
+            "option_3": "Is I a teacher ?",
+            "option_4": "Are you a teacher ?"
+        },
+        {
+            "number": 4,
+            "question": "Сіз студентсіз",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "You are a student",
+            "option_2": "You is a student",
+            "option_3": "You are a teacher",
+            "option_4": "I am a teacher"
+        },
+        {
+            "number": 5,
+            "question": "Сіз студент емессіз",
+            "description": "You ____ ____ a student",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "are not",
+            "option_2": "is not",
+            "option_3": "am not",
+            "option_4": "not are"
+        },
+        {
+            "number": 6,
+            "question": "Сен студентсің бе ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Are you a student ?",
+            "option_2": "Are you a teacher ?",
+            "option_3": "Do you a student ?",
+            "option_4": "Is you a student ?"
+        },
+        {
+            "number": 7,
+            "question": "Бекзат дәрігер",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Bekzat is a doctor",
+            "option_2": "Bekzat are a doctor",
+            "option_3": "Bekzat is not a doctor",
+            "option_4": "He is a doctor"
+        },
+        {
+            "number": 8,
+            "question": "Бекзат дәрігер емес",
+            "description": "Bekzat ____ ____ a doctor",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "is not",
+            "option_2": "are not",
+            "option_3": "am not",
+            "option_4": "do not"
+        },
+        {
+            "number": 9,
+            "question": "Бекзат дәрігер ме ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Is Bekzat a doctor ?",
+            "option_2": "Does Bekzat a doctor ?",
+            "option_3": "Are Bekzat a doctor ?",
+            "option_4": "Is He a doctor ?"
+        },
+        {
+            "number": 10,
+            "question": "Амина медбике",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Amina is a nurse",
+            "option_2": "Amina is a doctor",
+            "option_3": "Amina is not a nurse",
+            "option_4": "Amina are a nurse"
+        },
+        {
+            "number": 11,
+            "question": "Амина медбике емес",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Amina is not a nurse",
+            "option_2": "Amina doesn't a nurse",
+            "option_3": "Amina are not a nurse",
+            "option_4": "Amina am not a nurse"
+        },
+        {
+            "number": 12,
+            "question": "Амина медбике ме ?",
+            "description": "____ Amina a nurse ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Is",
+            "option_2": "Are",
+            "option_3": "Am",
+            "option_4": "Does"
+        },
+        {
+            "number": 13,
+            "question": "Біз доспыз",
+            "type": "TEXT",
+            "option_1": "We are friends"
+        },
+        {
+            "number": 14,
+            "question": "Біз дос емеспіз",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "We are not friends",
+            "option_2": "We don't friends",
+            "option_3": "They are not friends",
+            "option_4": "We are friends"
+        },
+        {
+            "number": 15,
+            "question": "Біз доспыз ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Are we friends ?",
+            "option_2": "Do we friends ?",
+            "option_3": "Are we friend ?",
+            "option_4": "Is we friends ?"
+        },
+        {
+            "number": 16,
+            "question": "Олар әріптестер",
+            "description": "They ____ colleagues",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "are",
+            "option_2": "is",
+            "option_3": "are",
+            "option_4": "are not"
+        },
+        {
+            "number": 17,
+            "question": "Олар әріптес емес",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "They are not colleagues",
+            "option_2": "They not colleagues",
+            "option_3": "They are colleagues",
+            "option_4": "We are not colleagues"
+        },
+        {
+            "number": 18,
+            "question": "Олар әріптестер ме ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Are they colleagues ?",
+            "option_2": "Do they colleagues ?",
+            "option_3": "Are we colleagues ?",
+            "option_4": "They are colleagues ?"
+        },
+        {
+            "number": 19,
+            "question": "Мен бүгін бақыттымын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I am happy today",
+            "option_2": "I am not happy today",
+            "option_3": "I are happy today",
+            "option_4": "We am happy today"
+        },
+        {
+            "number": 20,
+            "question": "Мен бүгін бақытты емеспін",
+            "description": "I ____ ____ happy today",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "am not",
+            "option_2": "is not",
+            "option_3": "are not",
+            "option_4": "don't"
+        },
+        {
+            "number": 21,
+            "question": "Мен бүгін бақыттымын ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Am I happy today ?",
+            "option_2": "Is I happy today ?",
+            "option_3": "Do I happy today ?",
+            "option_4": "Am we happy today ?"
+        },
+        {
+            "number": 22,
+            "question": "Али өте дарынды",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Ali is very talented",
+            "option_2": "Ali is very tired",
+            "option_3": "Ali are very talented",
+            "option_4": "He is very talented"
+        },
+        {
+            "number": 23,
+            "question": "Али өте талантты емес",
+            "description": "Ali ____ ____ very talented",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "is not",
+            "option_2": "are not",
+            "option_3": "is not",
+            "option_4": "doesn't"
+        },
+        {
+            "number": 24,
+            "question": "Али өте талантты ма ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Is Ali very talented ?",
+            "option_2": "Is Ali talented ?",
+            "option_3": "Does Ali very talented ?",
+            "option_4": "Ali is talented ?"
+        },
+        {
+            "number": 25,
+            "question": "Ол(қыз) тамаша аспаз",
+            "description": "She ____ ____ excellent cook",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "is an",
+            "option_2": "is a",
+            "option_3": "are an",
+            "option_4": "an is"
         }
     ]
 };
