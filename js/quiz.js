@@ -1,10 +1,13 @@
 // const
 const BASE_URL = "https://sheetdb.io/api/v1/xvti32evlv42c"
 
+let timerId;
+let time = 0;
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // start quiz 
+    // start quiz
+    let startDate = new Date();
     const quizForm = document.getElementById('quiz-form');
     const resultDiv = document.getElementById('result');
     const restartBtn = document.getElementById('restart-btn');
@@ -24,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function loadQuiz() {
+        startDate = new Date();
+        time = 0;
         quizForm.innerHTML = '';
         resultDiv.innerHTML = '';
 
@@ -91,6 +96,9 @@ document.addEventListener('DOMContentLoaded', function () {
         quizForm.appendChild(submitBtn);
     }
 
+    // run timer 
+    startTimer();
+
     function showResults() {
         let score = 0;
         let allAnswered = true; // Flag to track if all questions are answered
@@ -137,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.disabled = true;
 
             // save results in sheet
-           requestToSaveResult(`${score}/${quizData.length}`)
+           requestToSaveResult(`${score}/${quizData.length}`, startDate)
         }
 
     }
@@ -165,14 +173,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-function requestToSaveResult(score) {
+function requestToSaveResult(score, startDate) {
     const user = JSON.parse(localStorage.getItem("user"));
+    if(!user?.name && !user?.surname) {
+        window.location.href = "/";
+    }
+    console.log(user);
 
     const url = window.location.href;
     const urlObj = new URL(url);
     const searchParams = new URLSearchParams(urlObj.search);
-
     const title = searchParams.get('tense');
+    
     showLoading();
     fetch(BASE_URL, {
         method: "POST",
@@ -185,11 +197,18 @@ function requestToSaveResult(score) {
             score,
             name: user.name,
             surname: user.surname,
-            title 
+            title,
+            time: getFormatedTime(),
+            start_date: formatDateWithTimezone(startDate),
+            end_date: formatDateWithTimezone(new Date())
         }]})
     })
     .catch(() => {})
-    .finally(() => hideLoading())
+    .finally(() => {
+        hideLoading();
+        clearInterval(timerId);
+        startTimer();
+    })
 }
 
 function showLoading() {
@@ -198,4 +217,51 @@ function showLoading() {
 
 function hideLoading() {
     document.getElementById('loader-container').style.display = 'none';
+}
+
+
+// timer
+function displayTime() {
+    document.getElementById('timer').textContent = getFormatedTime();
+}
+function startTimer() {
+    clearInterval(timerId);
+    timerId = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    if (time >= 3600) {
+        clearInterval(timer);
+        alert("Time's up!");
+        time= 0
+        return;
+    }
+    time ++;
+    displayTime();
+}
+
+function getFormatedTime() {
+    const minutes = Math.floor((time % 3600) / 60);
+    const seconds = time % 60;
+    // dd.MM.yyyy HH:mm:ss
+
+    return  `00:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+
+function formatDateWithTimezone(date) {
+    // Convert the date to local time using toLocaleString
+    const localDate = new Date(date.toLocaleString('en', {timeZone: 'Asia/Almaty'}));
+    
+    const year = localDate.getFullYear();
+    const month = String(localDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const day = String(localDate.getDate()).padStart(2, '0');
+    const hours = String(localDate.getHours()).padStart(2, '0');
+    const minutes = String(localDate.getMinutes()).padStart(2, '0');
+    const seconds = String(localDate.getSeconds()).padStart(2, '0');
+  
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  }
+
+function finishQuiz() {
+    window.location.href = "/"
 }
