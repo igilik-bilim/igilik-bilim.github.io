@@ -1,6 +1,17 @@
 // const
 const BASE_URL = "https://sheetdb.io/api/v1/xvti32evlv42c"
+const SECTION = {
+    PRESENT: "present",
+    PAST: "past",
+    FUTURE: "future",
+    TO_BE_PRESENT: "to_be_present"
+}
 
+const PRESENT_QUEST_COUNT = 7;
+const PAST_QUEST_COUNT = 7;
+const FUTURE_QUEST_COUNT = 6;
+
+const TENSE_QUEST_COUNT = 5;
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -11,7 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const params = new URLSearchParams(window.location.search);
     const tense = params.get('tense');
+    
     let quizDB = data[tense];
+    
+    if(tense === "quiz") {
+        quizDB = [
+            ...(data[SECTION.PRESENT].sort(() => Math.random() - 0.5).slice(0, PRESENT_QUEST_COUNT)), // 7
+            ...data[SECTION.PAST].sort(() => Math.random() - 0.5).slice(0, PAST_QUEST_COUNT), // 7
+            ...data[SECTION.FUTURE].sort(() => Math.random() - 0.5).slice(0, FUTURE_QUEST_COUNT) // 6
+        ]
+    }
+    
 
     let quizData = [];
 
@@ -27,7 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
         quizForm.innerHTML = '';
         resultDiv.innerHTML = '';
 
-        quizData = quizDB.sort(() => Math.random() - 0.5).slice(0, 5);
+        quizData = tense !== "quiz"
+         ? quizDB.sort(() => Math.random() - 0.5).slice(0, TENSE_QUEST_COUNT)
+         : quizDB
 
         quizData.forEach((quizItem, index) => {
             const questionDiv = document.createElement('div');
