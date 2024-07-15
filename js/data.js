@@ -1239,6 +1239,33 @@ const data = {
         },
         {
             "number": 19,
+            "question": "Мен кітапты ертең аламын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I will take the book tomorrow",
+            "option_2": "I will read the book tomorrow",
+            "option_3": "I take the book tomorrow",
+            "option_4": "We will take the book tomorrow"
+        },
+        {
+            "number": 20,
+            "question": "Мен кітапты ертең алмаймын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I won't take the book tomorrow",
+            "option_2": "I don't take the book tomorrow",
+            "option_3": "I didn't take the book tomorrow",
+            "option_4": "We won't take the book tomorrow"
+        },
+        {
+            "number": 21,
+            "question": "Мен кітапты ертең аламын ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will I take the book tomorrow ?",
+            "option_2": "Do I take the book tomorrow ?",
+            "option_3": "Did I take the book tomorrow ?",
+            "option_4": "Will I take the book tomorrow ?"
+        },
+        {
+            "number": 22,
             "question": "Біз келесі жылы Жапонияға саяхаттаймыз",
             "type": "MULTIPLE CHOICE",
             "option_1": "We will travel to Japan next year",
@@ -1247,7 +1274,7 @@ const data = {
             "option_4": "They will travel to Japan next year"
         },
         {
-            "number": 20,
+            "number": 23,
             "question": "Біз келесі жылы Жапонияға саяхаттамаймыз",
             "description": "We ____ ____ to Japan next year",
             "type": "MULTIPLE CHOICE",
@@ -1257,7 +1284,7 @@ const data = {
             "option_4": " travel won’t"
         },
         {
-            "number": 21,
+            "number": 24,
             "question": "Сен келесі жылы Жапонияға саяхаттайсың ба ?",
             "type": "MULTIPLE CHOICE",
             "option_1": "Will you travel to Japan next year ?",
@@ -1266,7 +1293,7 @@ const data = {
             "option_4": "Will you travel to Japan next month ?"
         },
         {
-            "number": 22,
+            "number": 25,
             "question": "Мен сіздің сұрағыңызға ертең жауап беремін",
             "type": "MULTIPLE CHOICE",
             "option_1": "I will answer your question tomorrow",
@@ -1275,7 +1302,7 @@ const data = {
             "option_4": "I answer your question tomorrow"
         },
         {
-            "number": 23,
+            "number": 26,
             "question": "Мен сіздің сұрағыңызға ертең жауап бермеймін",
             "type": "MULTIPLE CHOICE",
             "option_1": "I won’t answer your question tomorrow",
@@ -1284,7 +1311,7 @@ const data = {
             "option_4": "We won’t answer your question tomorrow"
         },
         {
-            "number": 24,
+            "number": 27,
             "question": "Сіз менің сұрағыма ертең жауап бересіз бе ?",
             "description": "Will ____ ____ my question tomorrow ?",
             "type": "MULTIPLE CHOICE",
@@ -1294,8 +1321,8 @@ const data = {
             "option_4": "you ask"
         },
         {
-            "number": 25,
-            "question": "Ол(ер) сізге кітапты келесі аптада береді",
+            "number": 28,
+            "question": "Ол сізге кітапты келесі аптада береді",
             "type": "MULTIPLE CHOICE",
             "option_1": "He will give you the book next week",
             "option_2": "He will give you the book next month",
@@ -1303,8 +1330,8 @@ const data = {
             "option_4": "He gives you the book next week"
         },
         {
-            "number": 26,
-            "question": "Ол(ер) сізге кітапты келесі аптада бермейді",
+            "number": 29,
+            "question": "Ол сізге кітапты келесі аптада бермейді",
             "description": "He ____ ____ you the book next week",
             "type": "MULTIPLE CHOICE",
             "option_1": "won’t give",
@@ -1313,7 +1340,7 @@ const data = {
             "option_4": "won’t take"
         },
         {
-            "number": 27,
+            "number": 30,
             "question": "Ол сізге кітапты келесі аптада береді ме ?",
             "type": "MULTIPLE CHOICE",
             "option_1": "Will he give you the book next week ?",
@@ -1322,13 +1349,160 @@ const data = {
             "option_4": "Will he give you the book next year ?"
         },
         {
-            "number": 28,
+            "number": 31,
             "question": "Мен бүгін түнде ерте ұйықтаймын",
             "type": "MULTIPLE CHOICE",
             "option_1": "I will sleep early tonight",
             "option_2": "I won’t sleep early tonight",
             "option_3": "He will sleep early tonight",
             "option_4": "I sleep early tonight"
+        },
+        {
+            "number": 32,
+            "question": "Мен бүгін түнде ерте ұйықтамаймын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I won’t sleep early tonight",
+            "option_2": "I don’t sleep early tonight",
+            "option_3": "I didn’t sleep early tonight",
+            "option_4": "I not sleep early tonight"
+        },
+        {
+            "number": 33,
+            "question": "Мен бүгін түнде ерте ұйықтаймын ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will I sleep early tonight ?",
+            "option_2": "Do I sleep early tonight ?",
+            "option_3": "Will we sleep early tonight ?",
+            "option_4": "Will I go early tonight ?"
+        },
+        {
+            "number": 34,
+            "question": "Ол(қыз) кітапты ертең оқиды",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "She will read the book tomorrow",
+            "option_2": "She reads the book tomorrow",
+            "option_3": "She won’t read the book tomorrow",
+            "option_4": "He will read the book tomorrow"
+        },
+        {
+            "number": 35,
+            "question": "Ол(қыз) кітапты ертең оқымайды",
+            "description": "She ____ ____ the book tomorrow",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "won’t read",
+            "option_2": "don’t read",
+            "option_3": "doesn’t read",
+            "option_4": "won’t reads"
+        },
+        {
+            "number": 36,
+            "question": "Сен кітапты ертең оқисың ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will you read the book tomorrow ?",
+            "option_2": "Do you read the book tomorrow ?",
+            "option_3": "Did you read the book tomorrow ?",
+            "option_4": "Will he read the book tomorrow ?"
+        },
+        {
+            "number": 37,
+            "question": "Олар дүкенді ертең таңертең ашады",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "They will open the store tomorrow morning",
+            "option_2": "They will close the store tomorrow morning",
+            "option_3": "We will open the store tomorrow morning",
+            "option_4": "They won’t open the store tomorrow morning"
+        },
+        {
+            "number": 38,
+            "question": "Олар дүкенді ертең таңертең ашпайды",
+            "description": "They ____ ____ the store tomorrow morning",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "won’t open",
+            "option_2": "don’t open",
+            "option_3": "didn’t open",
+            "option_4": "won’t close"
+        },
+        {
+            "number": 39,
+            "question": "Олар дүкенді ертең таңертең ашады ма ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will they open the store tomorrow morning ?",
+            "option_2": "Will they close the store tomorrow morning ?",
+            "option_3": "Do they open the store tomorrow morning ?",
+            "option_4": "They open the store tomorrow morning ?"
+        },
+        {
+            "number": 40,
+            "question": "Мен келесі аптада жаңа жұмысымды бастаймын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I will start my new job next week",
+            "option_2": "I will start my new job next year",
+            "option_3": "I will finish my new job next week",
+            "option_4": "I won’t start my new job next week"
+        },
+        {
+            "number": 41,
+            "question": "Мен келесі аптада жаңа жұмысымды бастаймаймын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I won’t start my new job next week",
+            "option_2": "I will start my new job next week",
+            "option_3": "I won’t start my new job next month",
+            "option_4": "I don’t start my new job next week"
+        },
+        {
+            "number": 42,
+            "question": "Мен келесі аптада жаңа жұмысымды бастаймын ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will I start my new job next week ?",
+            "option_2": "Do I start my new job next week ?",
+            "option_3": "Will I start my new job next month ?",
+            "option_4": "Will we start our new job next week ?"
+        },
+        {
+            "number": 43,
+            "question": "Бекзат бүгін кешке үй тапсырмасын аяқтайды",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Bekzat will finish his homework tonight",
+            "option_2": "Bekzat will start his homework tonight",
+            "option_3": "Bekzat won’t finish his homework tonight",
+            "option_4": "Bekzat finish his homework tonight"
+        },
+        {
+            "number": 44,
+            "question": "Бекзат бүгін кешке үй тапсырмасын аяқтамайды",
+            "description": "Bekzat ____ ____ his homework tonight",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "won’t finish",
+            "option_2": "don’t finish",
+            "option_3": "doesn’t finish",
+            "option_4": "finish won’t"
+        },
+        {
+            "number": 45,
+            "question": "Бекзат бүгін кешке үй тапсырмасын аяқтайды ма ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will Bekzat finish his homework tonight ?",
+            "option_2": "Do Bekzat finish his homework tonight ?",
+            "option_3": "Does Bekzat finish his homework tonight ?",
+            "option_4": "Bekzat finishes his homework tonight ?"
+        },
+        {
+            "number": 46,
+            "question": "Біз нәтижесін ертең білетін боламыз",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "We will know the results tomorrow",
+            "option_2": "We will know the results next week",
+            "option_3": "We know the results tomorrow",
+            "option_4": "They will know the results tomorrow"
+        },
+        {
+            "number": 47,
+            "question": "Біз нәтижесін ертең білетін боламыз ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will we know the results tomorrow ?",
+            "option_2": "Do we know the results tomorrow ?",
+            "option_3": "Will we know the results next month ?",
+            "option_4": "Did we know the results tomorrow ?"
         }
     ],
     "to_be_present": [
@@ -1560,6 +1734,241 @@ const data = {
             "option_2": "is a",
             "option_3": "are an",
             "option_4": "an is"
+        },
+        {
+            "number": 26,
+            "question": "Ол(қыз) тамаша аспаз емес",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "She is not an excellent cook",
+            "option_2": "She are not an excellent cook",
+            "option_3": "She is an excellent cook",
+            "option_4": "She is a excellent cook"
+        },
+        {
+            "number": 27,
+            "question": "Ол(қыз) тамаша аспаз ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Is she an excellent cook ?",
+            "option_2": "Is he an excellent cook ?",
+            "option_3": "Are she an excellent cook ?",
+            "option_4": "Is she a excellent cook ?"
+        },
+        {
+            "number": 28,
+            "question": "Біз сапарға дайынбыз",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "We are ready for the trip",
+            "option_2": "They are ready for the trip",
+            "option_3": "We is ready for the trip",
+            "option_4": "We are very for the trip"
+        },
+        {
+            "number": 29,
+            "question": "Біз сапарға дайын емеспіз",
+            "description": "We ____ ____ ready for the trip",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "are not",
+            "option_2": "is not",
+            "option_3": "am not",
+            "option_4": "not are"
+        },
+        {
+            "number": 30,
+            "question": "Біз саяхатқа дайынбыз ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Are we ready for the trip ?",
+            "option_2": "Do we ready for the trip ?",
+            "option_3": "Are we very for the trip ?",
+            "option_4": "Did we ready for the trip ?"
+        },
+        {
+            "number": 31,
+            "question": "Мен қонақ бөлмедемін",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I am in the living room",
+            "option_2": "I is in the living room",
+            "option_3": "I be in the living room",
+            "option_4": "I am not in the living room"
+        },
+        {
+            "number": 32,
+            "question": "Мен қонақ бөлмеде емеспін",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I am not in the living room",
+            "option_2": "I don't in the living room",
+            "option_3": "I didn't in the living room",
+            "option_4": "I are not in the living room"
+        },
+        {
+            "number": 33,
+            "question": "Мен қонақ бөлмедемін бе ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Am I in the living room ?",
+            "option_2": "Do I in the living room ?",
+            "option_3": "I am in the living room ?",
+            "option_4": "Are I in the living room ?"
+        },
+        {
+            "number": 34,
+            "question": "Сіз өте мейірімдісіз",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "You are very kind",
+            "option_2": "You are kind",
+            "option_3": "You are very tired",
+            "option_4": "You are not very kind"
+        },
+        {
+            "number": 35,
+            "question": "Сіз өте мейірімді емессіз",
+            "description": "You ____ ____ very kind",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "are not",
+            "option_2": "is not",
+            "option_3": "am not",
+            "option_4": "not are"
+        },
+        {
+            "number": 36,
+            "question": "Сіз өте мейірімдісіз бе ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Are you very kind ?",
+            "option_2": "Do you very kind ?",
+            "option_3": "Did you very kind ?",
+            "option_4": "Is you very kind ?"
+        },
+        {
+            "number": 37,
+            "question": "Мұрат офисте",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Murat is at the office",
+            "option_2": "Murat is not at the office",
+            "option_3": "Murat are at the office",
+            "option_4": "Murat am at the office"
+        },
+        {
+            "number": 38,
+            "question": "Мұрат офисте жоқ",
+            "description": "Murat ____ ____ at the office",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "is not",
+            "option_2": "are not",
+            "option_3": "do not",
+            "option_4": "am not"
+        },
+        {
+            "number": 39,
+            "question": "Мұрат офисте ме ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Is Murat at the office ?",
+            "option_2": "Does Murat at the office ?",
+            "option_3": "Are Murat at the office ?",
+            "option_4": "Is Murat at home ?"
+        },
+        {
+            "number": 40,
+            "question": "Мадина үйде",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Madina is at home",
+            "option_2": "Madina is not at home",
+            "option_3": "Madina is at the office",
+            "option_4": "She is at home"
+        },
+        {
+            "number": 41,
+            "question": "Мадина үйде жоқ",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Madina is not at home",
+            "option_2": "Madina is at home",
+            "option_3": "Madina doesn't at home",
+            "option_4": "Madina am not at home"
+        },
+        {
+            "number": 42,
+            "question": "Мадина үйде ме ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Is Madina at home ?",
+            "option_2": "Is Madina at the office ?",
+            "option_3": "Am Madina at home ?",
+            "option_4": "Does Madina at home ?"
+        },
+        {
+            "number": 43,
+            "question": "Бұл жақсы кітап",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "It is a good book",
+            "option_2": "It is not a good book",
+            "option_3": "It is an good book",
+            "option_4": "It is good book"
+        },
+        {
+            "number": 44,
+            "question": "Бұл жақсы кітап емес",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "It is not a good book",
+            "option_2": "It is a good book",
+            "option_3": "It are not a good book",
+            "option_4": "It is not a book good"
+        },
+        {
+            "number": 45,
+            "question": "Бұл жақсы кітап па ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Is it a good book ?",
+            "option_2": "Is it a good journal ?",
+            "option_3": "Is it an good book ?",
+            "option_4": "It is a good book ?"
+        },
+        {
+            "number": 46,
+            "question": "Біз өнерге қызығамыз",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "We are interested in art",
+            "option_2": "They are interested in art",
+            "option_3": "We are not interested in art",
+            "option_4": "We are interested in music"
+        },
+        {
+            "number": 47,
+            "question": "Біз өнерге қызықпаймыз",
+            "description": "We ____ ____ interested in art",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "are not",
+            "option_2": "is not",
+            "option_3": "do not",
+            "option_4": "not are"
+        },
+        {
+            "number": 48,
+            "question": "Біз өнерге қызығамыз ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Are we interested in art ?",
+            "option_2": "Do we interested in art ?",
+            "option_3": "Are they interested in art ?",
+            "option_4": "We interested in art ?"
+        },
+        {
+            "number": 49,
+            "question": "Мен шаршадым",
+            "type": "TEXT",
+            "option_1": "I am tired"
+        },
+        {
+            "number": 50,
+            "question": "Мен шаршаған жоқпын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I am not tired",
+            "option_2": "I don't tired",
+            "option_3": "We are not tired",
+            "option_4": "I am tired"
+        },
+        {
+            "number": 51,
+            "question": "Мен шаршадым ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Am I tired ?",
+            "option_2": "Do I tired ?",
+            "option_3": "Are I tired ?",
+            "option_4": "I am tired ?"
         }
     ]
 };
