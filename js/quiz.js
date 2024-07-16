@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let quizDB = data[tense];
 
-    if(tense === "quiz") {
+    if(tense === "quiz1") {
         quizDB = [
             ...(data[SECTION.PRESENT].sort(() => Math.random() - 0.5).slice(0, PRESENT_QUEST_COUNT)), // 7
             ...data[SECTION.PAST].sort(() => Math.random() - 0.5).slice(0, PAST_QUEST_COUNT), // 7
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         quizForm.innerHTML = '';
         resultDiv.innerHTML = '';
 
-        quizData = tense !== "quiz"
+        quizData = tense !== "quiz1"
          ? quizDB.sort(() => Math.random() - 0.5).slice(0, TENSE_QUEST_COUNT)
          : quizDB
 
