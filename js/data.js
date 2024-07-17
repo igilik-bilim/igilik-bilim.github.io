@@ -1970,5 +1970,276 @@ const data = {
             "option_3": "Are I tired ?",
             "option_4": "I am tired ?"
         }
+    ],
+    "to_be_past": [
+        {
+            "number": 1,
+            "question": "Мен кеше бақытты болдым",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I was happy yesterday",
+            "option_2": "I am happy yesterday",
+            "option_3": "I were happy yesterday",
+            "option_4": "He was happy yesterday"
+        },
+        {
+            "number": 2,
+            "question": "Мен кеше бақытты болмадым",
+            "description": "I ____ ____ happy yesterday",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "was not",
+            "option_2": "were not",
+            "option_3": "am not",
+            "option_4": "not was"
+        },
+        {
+            "number": 3,
+            "question": "Мен кеше бақытты болдым ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Was I happy yesterday ?",
+            "option_2": "Did I am happy yesterday ?",
+            "option_3": "I was happy yesterday ?",
+            "option_4": "Was I happy last week ?"
+        },
+        {
+            "number": 4,
+            "question": "Ол(қыз) бүгін таңертең саябақта болды",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "She was at the park this morning",
+            "option_2": "She was at the park yesterday",
+            "option_3": "She were at the park this morning",
+            "option_4": "She was not at the park this morning"
+        },
+        {
+            "number": 5,
+            "question": "Ол(қыз) бүгін таңертең саябақта болмады",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "She was not at the park this morning",
+            "option_2": "She is not at the park this morning",
+            "option_3": "He was not at the park this morning",
+            "option_4": "She were not at the park this morning"
+        },
+        {
+            "number": 6,
+            "question": "Ол(қыз) бүгін таңертең саябақта болды ма ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Was she at the park this morning ?",
+            "option_2": "Were she at the park this morning ?",
+            "option_3": "Was he at the park this morning ?",
+            "option_4": "Did she at the park this morning ?"
+        },
+        {
+            "number": 7,
+            "question": "Ол(ер) тамаша мұғалім болды",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "He was a great teacher",
+            "option_2": "He was not a great teacher",
+            "option_3": "He was a great student",
+            "option_4": "She was a great teacher"
+        },
+        {
+            "number": 8,
+            "question": "Ол(ер) тамаша мұғалім болды ма ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Was he a great teacher ?",
+            "option_2": "Was she a great teacher ?",
+            "option_3": "Did he a great teacher ?",
+            "option_4": "Were he a great teacher ?"
+        },
+        {
+            "number": 9,
+            "question": "Шуақты күн болды",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "It was a sunny day",
+            "option_2": "It was an sunny day",
+            "option_3": "It were a sunny day",
+            "option_4": "It was not a sunny day"
+        },
+        {
+            "number": 10,
+            "question": "Шуақты күн болмады",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "It was not a sunny day",
+            "option_2": "It was a sunny day",
+            "option_3": "It were not a sunny day",
+            "option_4": "It is not a sunny day"
+        },
+        {
+            "number": 11,
+            "question": "Шуақты күн болды ма ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Was it a sunny day ?",
+            "option_2": "Is it a sunny day ?",
+            "option_3": "It was a sunny day ?",
+            "option_4": "Did it a sunny day ?"
+        },
+        {
+            "number": 12,
+            "question": "Біз өткен жазда Парижде болдық",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "We were in Paris last summer",
+            "option_2": "We were in Paris last week",
+            "option_3": "We are in Paris last summer",
+            "option_4": "We was in Paris last summer"
+        },
+        {
+            "number": 13,
+            "question": "Біз өткен жазда Парижде болмадық",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "We were not in Paris last summer",
+            "option_2": "We were not in Berlin last summer",
+            "option_3": "We was not in Paris last summer",
+            "option_4": "They were not in Paris last summer"
+        },
+        {
+            "number": 14,
+            "question": "Біз өткен жазда Парижде болдық па ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Were we in Paris last summer ?",
+            "option_2": "Did we in Paris last summer ?",
+            "option_3": "Was we in Paris last summer ?",
+            "option_4": "We were in Paris last summer ?"
+        },
+        {
+            "number": 15,
+            "question": "Олар саяхатқа қатты қуанды",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "They were excited about the trip",
+            "option_2": "They were tired about the trip",
+            "option_3": "They are excited about the trip",
+            "option_4": "They was excited about the trip"
+        }
+    ],
+    "to_be_future": [
+        {
+            "number": 1,
+            "question": "Ерлан бай болады",
+            "type": "TEXT",
+            "option_1": "Erlan will be rich"
+        },
+        {
+            "number": 2,
+            "question": "Ерлан бай болады ма ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will Erlan be rich ?",
+            "option_2": "Will Erlan be smart ?",
+            "option_3": "Is Erlan smart ?",
+            "option_4": "Erlan will be rich ?"
+        },
+        {
+            "number": 3,
+            "question": "Сен ақылды боласың",
+            "type": "TEXT",
+            "option_1": "You will be smart"
+        },
+        {
+            "number": 4,
+            "question": "Сен ақылды боласың ба ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will you be smart ?",
+            "option_2": "Will I be smart ?",
+            "option_3": "You will be smart ?",
+            "option_4": "Will you are smart ?"
+        },
+        {
+            "number": 5,
+            "question": "Ол(ер) шаршайды",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "He will be tired",
+            "option_2": "She will be tired",
+            "option_3": "He is tired",
+            "option_4": "He will not be tired"
+        },
+        {
+            "number": 6,
+            "question": "Ол(ер) шаршамайды",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "He will not be tired",
+            "option_2": "He will be tired",
+            "option_3": "He is not tired",
+            "option_4": "He will not be hungry"
+        },
+        {
+            "number": 7,
+            "question": "Ол(ер) шаршайды ма ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will he be tired ?",
+            "option_2": "Does he be tired ?",
+            "option_3": "Will she be tired ?",
+            "option_4": "Is he tired ?"
+        },
+        {
+            "number": 8,
+            "question": "Мен аш боламын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I will be hungry",
+            "option_2": "I am hungry",
+            "option_3": "I was hungry",
+            "option_4": "I will not be hungry"
+        },
+        {
+            "number": 9,
+            "question": "Мен аш болмаймын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I will not be hungry",
+            "option_2": "I am not hungry",
+            "option_3": "I will not be angry",
+            "option_4": "We will not be hungry"
+        },
+        {
+            "number": 10,
+            "question": "Мен аш боламын ба ?",
+            "description": "Will I ____ hungry ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "be",
+            "option_2": "am",
+            "option_3": "is",
+            "option_4": "are"
+        },
+        {
+            "number": 11,
+            "question": "Мади ашулы болады",
+            "description": "Madi ____ ____ angry",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "will be",
+            "option_2": "will is",
+            "option_3": "be will",
+            "option_4": "is not"
+        },
+        {
+            "number": 12,
+            "question": "Мади ашулы болмайды",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Madi will not be angry",
+            "option_2": "Madi will be angry",
+            "option_3": "Madi will not be hungry",
+            "option_4": "Madi is not angry"
+        },
+        {
+            "number": 13,
+            "question": "Мади ашулы болады ма ?",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "Will Madi be angry ?",
+            "option_2": "Madi will be angry ?",
+            "option_3": "Will Madi be smart ?",
+            "option_4": "Will He be angry ?"
+        },
+        {
+            "number": 14,
+            "question": "Мен батыл боламын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I will be brave",
+            "option_2": "I am brave",
+            "option_3": "I will not be brave",
+            "option_4": "We will be brave"
+        },
+        {
+            "number": 15,
+            "question": "Мен батыл болмаймын",
+            "type": "MULTIPLE CHOICE",
+            "option_1": "I will not be brave",
+            "option_2": "I will not am brave",
+            "option_3": "I will be brave",
+            "option_4": "I will not be sad"
+        }
     ]
 };
