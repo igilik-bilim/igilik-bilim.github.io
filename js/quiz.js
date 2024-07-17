@@ -1,5 +1,17 @@
 // const
 const BASE_URL = "https://sheetdb.io/api/v1/xvti32evlv42c"
+const SECTION = {
+    PRESENT: "present",
+    PAST: "past",
+    FUTURE: "future",
+    TO_BE_PRESENT: "to_be_present"
+}
+
+const PRESENT_QUEST_COUNT = 7;
+const PAST_QUEST_COUNT = 7;
+const FUTURE_QUEST_COUNT = 6;
+
+const TENSE_QUEST_COUNT = 5;
 
 let timerId;
 let time = 0;
@@ -14,7 +26,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const params = new URLSearchParams(window.location.search);
     const tense = params.get('tense');
+
     let quizDB = data[tense];
+
+    if(tense === "quiz1") {
+        quizDB = [
+            ...(data[SECTION.PRESENT].sort(() => Math.random() - 0.5).slice(0, PRESENT_QUEST_COUNT)), // 7
+            ...data[SECTION.PAST].sort(() => Math.random() - 0.5).slice(0, PAST_QUEST_COUNT), // 7
+            ...data[SECTION.FUTURE].sort(() => Math.random() - 0.5).slice(0, FUTURE_QUEST_COUNT) // 6
+        ]
+    }
+
 
     let quizData = [];
 
@@ -32,7 +54,9 @@ document.addEventListener('DOMContentLoaded', function () {
         quizForm.innerHTML = '';
         resultDiv.innerHTML = '';
 
-        quizData = quizDB.sort(() => Math.random() - 0.5).slice(0, 5);
+        quizData = tense !== "quiz1"
+         ? quizDB.sort(() => Math.random() - 0.5).slice(0, TENSE_QUEST_COUNT)
+         : quizDB
 
         quizData.forEach((quizItem, index) => {
             const questionDiv = document.createElement('div');
@@ -96,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
         quizForm.appendChild(submitBtn);
     }
 
-    // run timer 
+    // run timer
     startTimer();
 
     function showResults() {
@@ -184,7 +208,7 @@ function requestToSaveResult(score, startDate) {
     const urlObj = new URL(url);
     const searchParams = new URLSearchParams(urlObj.search);
     const title = searchParams.get('tense');
-    
+
     showLoading();
     fetch(BASE_URL, {
         method: "POST",
@@ -251,14 +275,14 @@ function getFormatedTime() {
 function formatDateWithTimezone(date) {
     // Convert the date to local time using toLocaleString
     const localDate = new Date(date.toLocaleString('en', {timeZone: 'Asia/Almaty'}));
-    
+
     const year = localDate.getFullYear();
     const month = String(localDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
     const day = String(localDate.getDate()).padStart(2, '0');
     const hours = String(localDate.getHours()).padStart(2, '0');
     const minutes = String(localDate.getMinutes()).padStart(2, '0');
     const seconds = String(localDate.getSeconds()).padStart(2, '0');
-  
+
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
   }
 
